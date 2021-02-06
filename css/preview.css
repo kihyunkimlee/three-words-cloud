@@ -1,0 +1,53 @@
+.preview {
+    display: none;
+
+    width: 85%;
+}
+
+#preview-template {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.preview-thumbnail {
+    flex-grow: 0;
+}
+
+.preview-info {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-left: 1rem;
+}
+
+.preview-size {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.preview-name {
+    font-size: 1rem;
+}
+
+.preview-progress {
+    margin-top: 1rem;
+    
+    width: 80%;
+    height: 1.5rem;
+}
+
+.progress-body {
+    height: inherit;
+
+    background-color: #f1f1f1;
+}
+
+.progress-bar {
+    height: inherit;
+    
+    background-color: #2ac187;
+}

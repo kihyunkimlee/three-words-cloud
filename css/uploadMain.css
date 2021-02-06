@@ -1,0 +1,47 @@
+#upload-main {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    border: #2ac187 2px dashed;
+    margin: 3px;
+
+    width: 100%;
+}
+
+#upload-main form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    font-size: 1.2rem;
+
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+#upload-main form:hover {
+    cursor: pointer;
+}
+
+#upload-main form button {
+    border: none;
+
+    background: none;
+
+    font-size: inherit;
+
+    cursor: pointer;
+}
+
+#upload-main form button:focus {
+    outline: none;
+}
+
+#upload-main form button div {
+    margin-top: 0.5rem;
+
+    font-size: 0.8rem;
+}

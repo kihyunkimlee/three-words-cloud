@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>three words cloud</title>
         <link rel="stylesheet" href="/css/base.css">
+        <link rel="stylesheet" href="/css/uploadMain.css">
+        <link rel="stylesheet" href="/css/preview.css">
     </head>
     <body>
         <div class="container">
@@ -16,7 +18,32 @@
                     <li>DOWNLOAD</li>
                 </ul>
                 <div class="content">
-                    <div id="upload-main"></div>
+                    <div id="upload-main">
+                        <form enctype="multipart/form-data">
+                            <button type="button" class="dz-message">
+                                Click here or drop file to upload
+                                <div>(MAX 3MB file)</div>
+                            </button>
+                            <input type="hidden" name="age" value="10800000">
+                            <div class="preview">
+                                <div id="preview-template">
+                                    <div class="preview-thumbnail">
+                                        <img data-dz-thumbnail />
+                                    </div>
+                                    <div class="preview-info">
+                                        <div class="preview-size" data-dz-size></div>
+                                        <div class="preview-name" data-dz-name></div>
+                                        <div class="preview-progress">
+                                            <div class="progress-body">
+                                                <div class="progress-bar" style="width:0%" data-dz-uploadprogress></div>
+                                            </div>
+                                        </div>
+                                        <div class="preview-error-message" data-dz-errormessage></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                     <div id="upload-resuit" style="display:none"></div>
                     <div id="download-main" style="display:none"></div>
                     <div id="download-result" style="display:none"></div>
