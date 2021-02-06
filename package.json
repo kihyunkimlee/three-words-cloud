@@ -1,0 +1,32 @@
+{
+  "name": "threewordscloud-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/js/app.js",
+  "scripts": {
+    "start": "npx webpack serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kihyunkimlee/threeWordsCloud_client.git"
+  },
+  "author": "kihyunkimlee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kihyunkimlee/threeWordsCloud_client/issues"
+  },
+  "homepage": "https://github.com/kihyunkimlee/threeWordsCloud_client#readme",
+  "dependencies": {
+    "@popperjs/core": "^2.6.0",
+    "dropzone": "^5.7.2"
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.18.0",
+    "webpack-cli": "^4.4.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
