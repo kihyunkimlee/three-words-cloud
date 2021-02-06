@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/css/base.css">
         <link rel="stylesheet" href="/css/uploadMain.css">
         <link rel="stylesheet" href="/css/preview.css">
+        <link rel="stylesheet" href="/css/uploadModal.css">
     </head>
     <body>
         <div class="container">
@@ -50,7 +51,23 @@
                 </div>
             </div>
         </div>
-        <div id="upload-modal"></div>
+        <div id="upload-modal">
+            <div class="modal-content">
+                <h2 class="title">Upload</h2>
+                <div class="seperator"></div>
+                <h4 class="sub-title">Please fill the settings for this file</h4>
+                <div class="input-field">
+                    <label>Expiration</label>
+                    <select id="age-select">
+                        <option value="30000">30 seconds (for test)</option>
+                        <option value="10800000" selected>3 hours</option>
+                        <option value="43200000">12 hours</option>
+                        <option value="86400000">24 hours</option>
+                    </select>
+                </div>
+                <button id="upload-button">Upload</button>
+            </div>
+        </div>
         <script type="module" src="./dist/main.js"></script>
     </body>
 </html>
