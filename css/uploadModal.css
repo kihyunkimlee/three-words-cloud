@@ -1,4 +1,4 @@
-#upload-modal {
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -61,14 +61,23 @@
     margin: 0.5rem 0rem;
 }
 
-#upload-button {
+.modal-button {
     display: block;
 
-    margin: 1.5rem 1rem 0rem auto;
+    margin: 0rem auto;
     padding: 0.5rem 1rem;
     border: none;
 
     font-size: 1rem;
+}
+
+.modal-button:hover {
+    cursor: pointer;
+}
+
+#upload-button {
+    margin: 1.5rem 1rem 0rem auto;
+
     color: white;
 
     background-color: #2ac187;
@@ -76,6 +85,4 @@
 
 #upload-button:hover {
     background-color: #24a473;
-
-    cursor: pointer;
 }
