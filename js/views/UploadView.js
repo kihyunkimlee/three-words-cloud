@@ -38,6 +38,7 @@ UploadView.createDropzone = function(){
         autoProcessQueue: false,
         previewTemplate: previewTemplate,
         previewsContainer: this.previewEl,
+        dictFileTooBig: 'File is too big ({{filesize}}MB). Max file size is {{maxFilesize}}MB.'
     });
 };
 
@@ -55,8 +56,17 @@ UploadView.addDropzoneEvents = function(){
 
         this.emit('@added');
     });
+
     this.dropzone.on('success', (file, res) => {
         this.emit('@uploaded', {res});
+    });
+
+    this.dropzone.on('error', (file, errMessage, xhr) => {
+        if (xhr){
+            this.emit('@serverError', { statusCode: xhr.status });
+        } else{
+            this.emit('@uploadError', {errMessage});
+        }
     });
 };
 
