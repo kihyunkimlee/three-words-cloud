@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="/css/uploadMain.css">
         <link rel="stylesheet" href="/css/preview.css">
         <link rel="stylesheet" href="/css/uploadModal.css">
+        <link rel="stylesheet" href="/css/uploadErrorModal.css">
     </head>
     <body>
         <div class="container">
@@ -23,7 +24,9 @@
                         <form enctype="multipart/form-data">
                             <button type="button" class="dz-message">
                                 Click here or drop file to upload
-                                <div>(MAX 3MB file)</div>
+                                <br>
+                                (Max file size is 3MB)
+                                <div>(Forbidden file formats : .asp, .aspx, .php, .jsp, .pl, .html)</div>
                             </button>
                             <input type="hidden" name="age" value="10800000">
                             <div class="preview">
@@ -66,6 +69,14 @@
                     </select>
                 </div>
                 <button class="modal-button" id="upload-button">Upload</button>
+            </div>
+        </div>
+        <div class="modal" id="upload-error-modal">
+            <div class="modal-content">
+                <h2 class="title">Error</h2>
+                <div class="seperator"></div>
+                <h3 class="sub-title" id="error-message"></h4>
+                <button class="modal-button" id="close-button">CLOSE</button>
             </div>
         </div>
         <script type="module" src="./dist/main.js"></script>

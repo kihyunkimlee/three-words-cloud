@@ -1,0 +1,15 @@
+#upload-error-modal {
+    display: none;
+}
+
+#close-button {
+    margin-top: 2rem;
+
+    color: white;
+
+    background-color: #2ac187;
+}
+
+#close-button:hover {
+    background-color: #24a473;
+}
