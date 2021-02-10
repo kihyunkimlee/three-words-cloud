@@ -6,6 +6,8 @@ const tag = '[UploadController]';
 
 export default {
     init(){
+        document.addEventListener('keyup', e => this.onKeyUp(e));
+
         UploadView.setup(document.querySelector('#upload-main'))
             .on('@added', () => this.onAddedFile())
             .on('@uploaded', (e) => this.onUploadedFile(e.detail.res))
@@ -26,6 +28,20 @@ export default {
 
     hide(){
         UploadView.hide();
+    },
+
+    onKeyUp(e){
+        const escape = 27;
+        if (e.keyCode !== escape) return;
+
+        this.hideAllModal();
+    },
+
+    hideAllModal(){
+        this.onResetForm();
+
+        UploadModalView.hide();
+        UploadErrorModalView.hide();
     },
 
     onAddedFile(){
