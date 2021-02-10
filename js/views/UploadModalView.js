@@ -18,6 +18,12 @@ UploadModalView.show = function(){
     this.el.style.display = 'block';
 };
 
+UploadModalView.hide = function(){
+    this.el.style.display = 'none';
+
+    this.resetModal();
+}
+
 UploadModalView.bindEvents = function(){
     this.el.addEventListener('click', (e) => this.onClickReset(e));
     this.buttonEl.addEventListener('click', () => this.onClickUpload());
@@ -29,7 +35,6 @@ UploadModalView.onClickReset = function(e){
     this.emit('@reset');
     
     this.hide();
-    this.resetModal();
 };
 
 UploadModalView.onClickUpload = function(){
@@ -38,7 +43,6 @@ UploadModalView.onClickUpload = function(){
     this.emit('@upload', {selectedAge});
 
     this.hide();
-    this.resetModal();
 };
 
 UploadModalView.resetModal = function(){
