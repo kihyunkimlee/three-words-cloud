@@ -31,14 +31,10 @@ UploadErrorModalView.onClickClose = function(e){
     if (e.target !== this.el) return;
 
     this.emit('@close');
-    
-    this.hide();
 };
 
 UploadErrorModalView.onClickCloseBtn = function(e){
     this.emit('@close');
-    
-    this.hide();
 };
 
 export default UploadErrorModalView;

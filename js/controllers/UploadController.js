@@ -16,11 +16,11 @@ export default {
             .on('@uploadError', (e) => this.onHandleUploadError(e.detail.errMessage));
         
         UploadModalView.setup(document.querySelector('#upload-modal'))
-            .on('@reset', () => this.onResetForm())
+            .on('@close', () => this.onCloseUploadModal())
             .on('@upload', (e) => this.onUploadFile(e.detail.selectedAge));
 
         UploadErrorModalView.setup(document.querySelector('#upload-error-modal'))
-            .on('@close', () => this.onResetForm());
+            .on('@close', () => this.onCloseUploadErrorModal());
 
         UploadResultView.setup(document.querySelector('#upload-result'))
             .on('@close', () => this.onCloseUploadResult());
@@ -52,39 +52,43 @@ export default {
     },
 
     hideAllModal(){
-        this.onResetForm();
-
+        this.resetFile();
         UploadModalView.hide();
         UploadErrorModalView.hide();
     },
 
     onAddedFile(){
-        console.log(tag, 'onAddedFile()');
         UploadModalView.show();
     },
 
-    onResetForm(){
-        console.log(tag, 'onResetForm()');
+    resetFile(){
         UploadView.removeAddedFile();
     },
 
+    onCloseUploadModal(){
+        this.resetFile();
+        UploadModalView.hide();
+    },
+
     onUploadFile(selectedAge){
-        console.log(tag, 'onUploadFile()');
+        UploadModalView.hide();
         UploadView.sendFile(selectedAge);
     },
 
+    onCloseUploadErrorModal(){
+        this.resetFile();
+        UploadErrorModalView.hide();
+    },
+
     onUploadedFile(res){
-        console.log(tag, 'onUploadedFile()');
         this.activeView = 'UploadResultView';
 
-        UploadView.hide();
         UploadResultView.render(res);
+        UploadView.hide();
         UploadResultView.show();
     },
 
     onHandleServerError(statusCode){
-        console.log(tag, 'onHandleServerError()');
-
         let errMessage;
         if (statusCode === 0){
             errMessage = 'The server is not responding.';
@@ -103,18 +107,15 @@ export default {
     },
 
     onHandleUploadError(errMessage){
-        console.log(tag, 'onHandleUploadError()');
-        UploadModalView.hide();
-
         UploadErrorModalView.render(errMessage);
+        UploadModalView.hide();
         UploadErrorModalView.show();
     },
 
     onCloseUploadResult(){
-        console.log(tag, 'onCloseUploadResult()');
         this.activeView = 'UploadView';
         
-        this.onResetForm();
+        this.resetFile();
         UploadResultView.hide();
         UploadView.show();
     },
