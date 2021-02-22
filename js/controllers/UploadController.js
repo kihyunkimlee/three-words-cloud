@@ -1,6 +1,7 @@
 import UploadView from '../views/UploadView.js';
 import UploadModalView from '../views/UploadModalView.js';
 import UploadErrorModalView from '../views/UploadErrorModalView';
+import UploadResultView from '../views/UploadResultView.js';
 
 const tag = '[UploadController]';
 
@@ -20,14 +21,27 @@ export default {
 
         UploadErrorModalView.setup(document.querySelector('#upload-error-modal'))
             .on('@close', () => this.onResetForm());
+
+        UploadResultView.setup(document.querySelector('#upload-result'))
+            .on('@close', () => this.onCloseUploadResult());
+
+        this.activeView = 'UploadView';
     },
 
     show(){
-        UploadView.show();
+        if (this.activeView === 'UploadView'){
+            UploadView.show();
+        } else{
+            UploadResultView.show();
+        }
     },
 
     hide(){
-        UploadView.hide();
+        if (this.activeView === 'UploadView'){
+            UploadView.hide();
+        } else{
+            UploadResultView.hide();
+        }
     },
 
     onKeyUp(e){
@@ -61,6 +75,11 @@ export default {
 
     onUploadedFile(res){
         console.log(tag, 'onUploadedFile()');
+        this.activeView = 'UploadResultView';
+
+        UploadView.hide();
+        UploadResultView.render(res);
+        UploadResultView.show();
     },
 
     onHandleServerError(statusCode){
@@ -89,5 +108,14 @@ export default {
 
         UploadErrorModalView.render(errMessage);
         UploadErrorModalView.show();
+    },
+
+    onCloseUploadResult(){
+        console.log(tag, 'onCloseUploadResult()');
+        this.activeView = 'UploadView';
+        
+        this.onResetForm();
+        UploadResultView.hide();
+        UploadView.show();
     },
 };
