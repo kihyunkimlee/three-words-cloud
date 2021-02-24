@@ -15,31 +15,52 @@
 
 .modal-content {
     position: fixed;
-    top: 30%;
-    right: calc(50% - 225px);
+    top: 20%;
+    right: 2.5%;
     
     padding: 2rem 1rem;
 
     box-sizing: border-box;
-    width: 450px;
+    width: 95%;
 
     background-color: white;
 }
 
-.modal-content .title {
+@media only screen and (min-width: 768px) {
+    .modal-content {
+        top: 25%;
+        right: 15%;
+
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .modal-content {
+        top: 25%;
+        right: 30%;
+
+        width: 40%;
+    }
+}
+
+.modal-title {
     margin: 0;
 
+    font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
 }
 
-.modal-content .sub-title {
+.modal-sub-title {
     margin: 1rem 0rem;
     
+    font-size: 1rem;
+
     text-align: center;
 }
 
-.modal-content .seperator {
+.modal-seperator {
     margin: 2rem 0rem;
     margin-left: -1rem;
 
@@ -49,7 +70,7 @@
     background-color: #2ac187;
 }
 
-#age-select {
+#ageSelect {
     display: block;
 
     margin: 0.5rem 0rem;
@@ -75,7 +96,7 @@
     cursor: pointer;
 }
 
-#upload-button {
+#uploadButton {
     margin: 1.5rem 1rem 0rem auto;
 
     color: white;
@@ -83,6 +104,6 @@
     background-color: #2ac187;
 }
 
-#upload-button:hover {
+#uploadButton:hover {
     background-color: #24a473;
 }

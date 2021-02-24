@@ -9,20 +9,20 @@ export default {
     init(){
         document.addEventListener('keyup', e => this.onKeyUp(e));
 
-        UploadView.setup(document.querySelector('#upload-main'))
+        UploadView.setup(document.querySelector('#uploadMain'))
             .on('@added', () => this.onAddedFile())
             .on('@uploaded', (e) => this.onUploadedFile(e.detail.res))
             .on('@serverError', (e) => this.onHandleServerError(e.detail.statusCode))
             .on('@uploadError', (e) => this.onHandleUploadError(e.detail.errMessage));
         
-        UploadModalView.setup(document.querySelector('#upload-modal'))
+        UploadModalView.setup(document.querySelector('#uploadModal'))
             .on('@close', () => this.onCloseUploadModal())
             .on('@upload', (e) => this.onUploadFile(e.detail.selectedAge));
 
-        UploadErrorModalView.setup(document.querySelector('#upload-error-modal'))
+        UploadErrorModalView.setup(document.querySelector('#uploadErrorModal'))
             .on('@close', () => this.onCloseUploadErrorModal());
 
-        UploadResultView.setup(document.querySelector('#upload-result'))
+        UploadResultView.setup(document.querySelector('#uploadResult'))
             .on('@close', () => this.onCloseUploadResult());
 
         this.activeView = 'UploadView';

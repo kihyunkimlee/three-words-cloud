@@ -6,8 +6,8 @@ const UploadModalView = Object.create(View);
 
 UploadModalView.setup = function(el){
     this.init(el);
-    this.selectEl = el.querySelector('#age-select');
-    this.buttonEl = el.querySelector('#upload-button');
+    this.selectEl = el.querySelector('#ageSelect');
+    this.buttonEl = el.querySelector('#uploadButton');
 
     this.bindEvents();
 

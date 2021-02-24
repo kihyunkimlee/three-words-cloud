@@ -1,8 +1,8 @@
-#upload-error-modal {
+#uploadErrorModal {
     display: none;
 }
 
-#close-button {
+#closeButton {
     margin-top: 2rem;
 
     color: white;
@@ -10,6 +10,6 @@
     background-color: #2ac187;
 }
 
-#close-button:hover {
+#closeButton:hover {
     background-color: #24a473;
 }

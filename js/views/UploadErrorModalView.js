@@ -6,8 +6,8 @@ const UploadErrorModalView = Object.create(View);
 
 UploadErrorModalView.setup = function(el){
     this.init(el);
-    this.messageEl = el.querySelector('#error-message');
-    this.buttonEl = el.querySelector('#close-button');
+    this.messageEl = el.querySelector('#errorMessage');
+    this.buttonEl = el.querySelector('#closeButton');
 
     this.bindEvents();
 

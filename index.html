@@ -13,82 +13,86 @@
     </head>
     <body>
         <div class="container">
-            <h1 class="title">Upload and download a file for free</h1>
-            <h4 class="sub-title">No registration needed, feel free to upload and download a file.</h4>
-            <div id="upload-and-download">
-                <ul id="tabs" class="tabs">
-                    <li class="active">UPLOAD</li>
-                    <li>DOWNLOAD</li>
-                </ul>
-                <div class="content">
-                    <div id="upload-main">
-                        <form enctype="multipart/form-data">
-                            <button type="button" class="dz-message">
-                                Click here or drop file to upload
-                                <br>
-                                (Max file size is 3MB)
-                                <div>(Forbidden file formats : .asp, .aspx, .php, .jsp, .pl, .html)</div>
-                            </button>
-                            <input type="hidden" name="age" value="10800000">
-                            <div class="preview">
-                                <div id="preview-template">
-                                    <div class="preview-thumbnail">
-                                        <img data-dz-thumbnail />
-                                    </div>
-                                    <div class="preview-info">
-                                        <div class="preview-size" data-dz-size></div>
-                                        <div class="preview-name" data-dz-name></div>
-                                        <div class="preview-progress">
-                                            <div class="progress-body">
-                                                <div class="progress-bar" style="width:0%" data-dz-uploadprogress></div>
+            <h1 id="mainTitle">Upload and download a file for free</h1>
+            <h3 id="mainSubTitle">No registration needed, feel free to upload and download a file.</h4>
+            <div class="row">
+                <div class="col-s-9 col-6" id="mainContentWrap">
+                    <div id="mainContent">
+                        <ul id="tabs" class="tabs">
+                            <li class="active">UPLOAD</li>
+                            <li>DOWNLOAD</li>
+                        </ul>
+                        <div id="subContent">
+                            <div id="uploadMain">
+                                <form enctype="multipart/form-data">
+                                    <button type="button" class="dz-message">
+                                        Click here or drop file to upload
+                                        <br>
+                                        (Max file size is 3MB)
+                                        <div>(Forbidden file formats : .asp, .aspx, .php, .jsp, .pl, .html)</div>
+                                    </button>
+                                    <input type="hidden" name="age" value="10800000">
+                                    <div class="preview">
+                                        <div id="preview-template">
+                                            <div class="preview-thumbnail">
+                                                <img data-dz-thumbnail />
+                                            </div>
+                                            <div class="preview-info">
+                                                <div class="preview-size" data-dz-size></div>
+                                                <div class="preview-name" data-dz-name></div>
+                                                <div class="preview-progress">
+                                                    <div class="progress-body">
+                                                        <div class="progress-bar" style="width:0%" data-dz-uploadprogress></div>
+                                                    </div>
+                                                </div>
+                                                <div class="preview-error-message" data-dz-errormessage></div>
                                             </div>
                                         </div>
-                                        <div class="preview-error-message" data-dz-errormessage></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id="uploadResult" style="display:none">
+                                <h2 id="uploadResultTitle">Your file has been uploaded successfully</h2>
+                                <div id="uploadResultContent">
+                                    <h3 id="uploadResultSubTitle">Three words key to your file</h3>
+                                    <div id="keyContainer">
                                     </div>
                                 </div>
+                                <h3 id="uploadResultFooter">You can download the file by <span id="uploadResultExpiredDate">2021/02/10</span></h3>
+                                <div id="uploadResultCloseButton">
+                                    <img src="images/close-button.png">
+                                </div>
                             </div>
-                        </form>
-                    </div>
-                    <div id="upload-result" style="display:none">
-                        <h2 class="sub-title">Your file has been uploaded successfully</h2>
-                        <div id="upload-result-content">
-                            <h4 class="sub-title">Three words key to your file</h4>
-                            <div id="key-container">
-                            </div>
-                        </div>
-                        <h3 class="sub-title">You can download the file by <span id="upload-result-expired-date">2021/02/10</span></h3>
-                        <div id="upload-result-close-button">
-                            <img src="images/close-button.png">
+                            <div id="download-main" style="display:none"></div>
+                            <div id="download-result" style="display:none"></div>
                         </div>
                     </div>
-                    <div id="download-main" style="display:none"></div>
-                    <div id="download-result" style="display:none"></div>
                 </div>
             </div>
         </div>
-        <div class="modal" id="upload-modal">
+        <div class="modal" id="uploadModal">
             <div class="modal-content">
-                <h2 class="title">Upload</h2>
-                <div class="seperator"></div>
-                <h3 class="sub-title">Please fill the settings for this file</h4>
+                <h2 class="modal-title">Upload</h2>
+                <div class="modal-seperator"></div>
+                <h3 class="modal-sub-title">Please fill the settings for this file</h4>
                 <div class="input-field">
                     <label>Expiration</label>
-                    <select id="age-select">
+                    <select id="ageSelect">
                         <option value="30000">30 seconds (for test)</option>
                         <option value="10800000" selected>3 hours</option>
                         <option value="43200000">12 hours</option>
                         <option value="86400000">24 hours</option>
                     </select>
                 </div>
-                <button class="modal-button" id="upload-button">Upload</button>
+                <button class="modal-button" id="uploadButton">Upload</button>
             </div>
         </div>
-        <div class="modal" id="upload-error-modal">
+        <div class="modal" id="uploadErrorModal">
             <div class="modal-content">
-                <h2 class="title">Error</h2>
-                <div class="seperator"></div>
-                <h3 class="sub-title" id="error-message"></h4>
-                <button class="modal-button" id="close-button">CLOSE</button>
+                <h2 class="modal-title">Error</h2>
+                <div class="modal-seperator"></div>
+                <h3 class="modal-sub-title" id="errorMessage"></h4>
+                <button class="modal-button" id="closeButton">CLOSE</button>
             </div>
         </div>
         <script type="module" src="./dist/main.js"></script>

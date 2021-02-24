@@ -1,4 +1,4 @@
-#upload-main {
+#uploadMain {
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -9,7 +9,7 @@
     width: 100%;
 }
 
-#upload-main form {
+#uploadMain form {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -22,26 +22,36 @@
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-#upload-main form:hover {
+#uploadMain form:hover {
     cursor: pointer;
 }
 
-#upload-main form button {
+#uploadMain form button {
     border: none;
 
     background: none;
 
-    font-size: inherit;
-
+    font-size: 1.25rem;
+    
     cursor: pointer;
 }
 
-#upload-main form button:focus {
+#uploadMain form button:focus {
     outline: none;
 }
 
-#upload-main form button div {
-    margin-top: 0.5rem;
+#uploadMain form button div {
+    margin-top: 0.7rem;
 
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+}
+
+@media only screen and (min-width: 768px) {
+    #uploadMain form button {
+        font-size: 1.5rem;
+    }
+
+    #uploadMain form button div {
+        font-size: 1rem;
+    }
 }

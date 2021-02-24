@@ -6,9 +6,9 @@ const UploadResultView = Object.create(View);
 
 UploadResultView.setup = function(el){
     this.init(el);
-    this.keyContainerEl = el.querySelector('#key-container');
-    this.buttonEl = el.querySelector('#upload-result-close-button');
-    this.expiredDateEl = el.querySelector('#upload-result-expired-date');
+    this.keyContainerEl = el.querySelector('#keyContainer');
+    this.buttonEl = el.querySelector('#uploadResultCloseButton');
+    this.expiredDateEl = el.querySelector('#uploadResultExpiredDate');
 
     this.bindClickEvent();
 
@@ -40,8 +40,8 @@ UploadResultView.getWordKeyHtml = function(words){
 
     for(const prop in words){
         html += `<div class="key">
-            <div class="key__name">${prop}</div>
-            <div class="key__value">${words[prop]}</div>
+            <div class="key-name">${prop}</div>
+            <div class="key-value">${words[prop]}</div>
         </div>`;
     }
 
