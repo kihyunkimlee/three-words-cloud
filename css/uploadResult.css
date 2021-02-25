@@ -19,12 +19,13 @@
 
 @media only screen and (min-width: 768px) {
     #uploadResultTitle {
-        font-size: 1.25rem;
+        font-size: 1.4rem;
     }
 }
 
 #uploadResultSubTitle {
     margin-top: 0rem;
+    margin-left: 1rem;
 }
 
 #uploadResultContent {
@@ -35,7 +36,13 @@
 
     width: 100%;
 
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+    #uploadResultContent {
+        margin-top: 0.5rem;
+    }
 }
 
 #keyContainer {
@@ -64,6 +71,12 @@
 
     padding: 0.5rem 0;
 
+}
+
+@media only screen and (min-width: 768px) {
+    .key-value {
+        font-size: 1.75rem;
+    }
 }
 
 #uploadResultCloseButton {
@@ -96,7 +109,7 @@
 
 @media only screen and (min-width: 768px) {
     #uploadResultFooter {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }
 
