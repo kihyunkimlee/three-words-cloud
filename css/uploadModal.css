@@ -82,28 +82,6 @@
     margin: 0.5rem 0rem;
 }
 
-.modal-button {
-    display: block;
-
-    margin: 0rem auto;
-    padding: 0.5rem 1rem;
-    border: none;
-
-    font-size: 1rem;
-}
-
-.modal-button:hover {
-    cursor: pointer;
-}
-
 #uploadButton {
     margin: 1.5rem 1rem 0rem auto;
-
-    color: white;
-
-    background-color: #2ac187;
-}
-
-#uploadButton:hover {
-    background-color: #24a473;
 }

@@ -4,12 +4,4 @@
 
 #closeButton {
     margin-top: 2rem;
-
-    color: white;
-
-    background-color: #2ac187;
-}
-
-#closeButton:hover {
-    background-color: #24a473;
 }
