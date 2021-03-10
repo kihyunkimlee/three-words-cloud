@@ -6,12 +6,12 @@ const TabView = Object.create(View);
 
 TabView.setup = function(el){
     this.init(el);
-    this.bindClick();
+    this.bindClickEvent();
 
     return this;
 };
 
-TabView.bindClick = function(){
+TabView.bindClickEvent = function(){
     Array.from(this.el.children).forEach((li) => {
         li.addEventListener("click", (e) => this.onClick(li.innerHTML));
     });
