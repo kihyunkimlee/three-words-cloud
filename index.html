@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="/css/uploadModal.css">
         <link rel="stylesheet" href="/css/uploadErrorModal.css">
         <link rel="stylesheet" href="/css/uploadResult.css">
+        <link rel="stylesheet" href="/css/downloadMain.css">
     </head>
     <body>
         <div class="container">
@@ -63,7 +64,26 @@
                                     <img src="images/close-button.png">
                                 </div>
                             </div>
-                            <div id="downloadMain" style="display:none"></div>
+                            <div class="container" id="downloadMain" style="display:none">
+                                <div class="row downloadMainWrap">
+                                    <h2 id="downloadMainTitle">Enter your password to find the file</h2>
+                                </div>
+                                <div class="row downloadMainWrap">
+                                    <div class="col-11">
+                                        <form id="downloadMainForm" autocomplete="off">
+                                            <input type="text" name="word1" placeholder="first word" size="11"/>
+                                            <input type="text" name="word2" placeholder="second word" size="11"/>
+                                            <input type="text" name="word3" placeholder="third word" size="11"/>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row downloadMainWrap">
+                                    <div class="button" id="downloadMainButton">DOWNLOAD</div>
+                                </div>
+                                <div id="downloadMainAlert" style="display:none">
+                                    <span id="downloadMainAlertcontent"></span>
+                                </div>
+                            </div>
                             <div id="downloadResult" style="display:none"></div>
                         </div>
                     </div>

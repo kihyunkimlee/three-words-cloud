@@ -1,0 +1,71 @@
+#downloadMain {
+    background: rgba(255, 255, 255, 0.7);
+
+    position: relative;
+}
+
+.downloadMainWrap {
+    justify-content: center;
+    align-items: center;
+
+    height: 33.33%;
+}
+
+#downloadMainTitle {
+    font-size: 1.2rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+#downloadMainForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#downloadMainForm input {
+    outline: none;
+    border: none;
+    border-bottom: 1.5px solid gray;
+
+    text-align: center;
+    font-size: 0.9rem;
+
+    background: inherit;
+}
+
+#downloadMainForm input.invalid {
+    border-bottom: 3px dashed #e65858;
+}
+
+#downloadMainButton {
+    font-size: 1rem;
+}
+
+#downloadMainAlert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 30%;
+
+    text-align: center;
+    font-weight: bold;
+    color: #e65858;
+}
+
+@media only screen and (min-width: 768px){
+    #downloadMainTitle {
+        font-size: 1.5rem;
+    }
+
+    #downloadMainForm input {
+        font-size: 1.2rem;
+    }
+
+    #downloadMainButton {
+        font-size: 1.2rem;
+    }
+}
+

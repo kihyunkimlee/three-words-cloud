@@ -3,7 +3,7 @@ import TabView from '../views/TabView.js';
 import UploadController from './UploadController.js';
 import DownloadController from './DownloadController.js';
 
-const tag = '[MainController]'
+const tag = '[MainController]';
 
 export default {
     init(){

@@ -20,6 +20,7 @@
   "homepage": "https://github.com/kihyunkimlee/threeWordsCloud_client#readme",
   "dependencies": {
     "@popperjs/core": "^2.6.0",
+    "axios": "^0.21.1",
     "dropzone": "^5.7.2"
   },
   "devDependencies": {
