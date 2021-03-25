@@ -71,8 +71,6 @@ html, body {
 
     width: 100%;
     height: 100%;
-
-    background: whitesmoke;
 }
 
 .row{
@@ -92,6 +90,10 @@ html, body {
 
 .flex-grow-1 {
     flex-grow: 1;
+}
+
+#mainWrap {
+    background: whitesmoke;
 }
 
 #mainTitle {
@@ -184,4 +186,22 @@ html, body {
     cursor: pointer;
     
     background-color: #24a473;
+}
+
+.close-button {
+    position: absolute;
+
+    background-color: inherit;
+
+    width: 17px;
+    height: 17px;
+}
+
+.close-button:hover {
+    cursor: pointer;
+}
+
+.close-button img {
+    width: inherit;
+    height: inherit;
 }
