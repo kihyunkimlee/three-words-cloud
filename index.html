@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="/css/uploadErrorModal.css">
         <link rel="stylesheet" href="/css/uploadResult.css">
         <link rel="stylesheet" href="/css/downloadMain.css">
+        <link rel="stylesheet" href="/css/downloadResult.css">
     </head>
     <body>
         <div id="mainWrap" class="container">
@@ -84,7 +85,28 @@
                                     <span id="downloadMainAlertcontent"></span>
                                 </div>
                             </div>
-                            <div id="downloadResult" style="display:none"></div>
+                            <div id="downloadResult" class="container" style="display:none">
+                                <div id="downloadResultFileMainInfo" class="row">
+                                    <div id="downloadResultFileIcon"></div>
+                                    <div id="downloadResultFileName"></div>
+                                </div>
+                                <div id="downloadResultFileSubInfo" class="row">
+                                    <div class="col-s-9">
+                                        <div class="container">
+                                            <div class="row">size :&nbsp;<span id="downloadResultFileSize"></span></div>
+                                            <div class="row">uploaded :&nbsp;<span id="downloadResultFileUploadeDate"></span></div>
+                                            <div class="row">expires :&nbsp;<span id="downloadResultFileExpireDate"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a id="downloadResultButton" class="button" href download>
+                                    <img src="images/download-icon.png">
+                                    DOWNLOAD
+                                </a>
+                                <div id="downloadResultCloseButton" class="close-button">
+                                    <img src="images/close-button.png">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

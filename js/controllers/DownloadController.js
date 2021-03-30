@@ -1,4 +1,5 @@
 import DownloadView from '../views/DownloadView.js';
+import DownloadResultView from '../views/DownloadResultView.js';
 
 import FileModel from '../models/FileModel.js';
 
@@ -9,6 +10,9 @@ export default {
         DownloadView.setup(document.querySelector('#downloadMain'))
             .on('@auth', (e) => this.onAuthThreeWordsKey(e.detail.threeWordsKey));
 
+        DownloadResultView.setup(document.querySelector('#downloadResult'))
+            .on('@close', () => this.onCloseDownloadResult());
+
         this.activeView = 'DownloadView';
     },
 
@@ -16,7 +20,7 @@ export default {
         if (this.activeView === 'DownloadView'){
             DownloadView.show();
         } else{
-
+            DownloadResultView.show();
         }
     },
 
@@ -24,14 +28,18 @@ export default {
         if (this.activeView === 'DownloadView'){
             DownloadView.hide();
         } else{
-
+            DownloadResultView.hide();
         }
     },
 
     onAuthThreeWordsKey(threeWordsKey){
         FileModel.auth(threeWordsKey)
             .then((res) => {
-                console.log(res.data);
+                this.activeView = 'DownloadResultView';
+
+                DownloadResultView.render(res.data);
+                DownloadView.hide();
+                DownloadResultView.show();
             })
             .catch(this.handleAuthError);
     },
@@ -48,5 +56,17 @@ export default {
         } else{
             DownloadView.renderMessage('An unexpected error has occurred!');
         }
-    }
+    },
+
+    onCloseDownloadResult(){
+        this.activeView = 'DownloadView';
+
+        this.resetForm();
+        DownloadResultView.hide();
+        DownloadView.show();
+    },
+
+    resetForm(){
+        DownloadView.resetForm();
+    },
 };

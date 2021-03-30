@@ -1,0 +1,65 @@
+#downloadResult {
+    padding: 0rem 2rem;
+
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#downloadResultFileMainInfo {
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 3.5rem;
+}
+
+#downloadResultFileIcon img{
+    width: 30px;
+    height: 30px;
+
+    margin-right: 0.5rem;
+}
+
+#downloadResultFileName {
+    font-size: 1.25rem;
+}
+
+#downloadResultFileSubInfo {
+    justify-content: center;
+
+    margin-top: 2rem;
+}
+
+#downloadResultButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+
+    text-decoration: none;
+}
+
+#downloadResultButton img {
+    width: 20px;
+    height: 20px;
+    
+    margin-right: 0.5rem;
+}
+
+#downloadResultCloseButton {
+    top: 10px;
+    right: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    #downloadResultFileName {
+        font-size: 1.8rem;
+    }
+
+    #downloadResultFileIcon img{
+        width: 35px;
+        height: 35px;
+    }
+}
