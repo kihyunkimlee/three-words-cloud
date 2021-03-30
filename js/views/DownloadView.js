@@ -26,6 +26,10 @@ DownloadView.bindEvents = function(){
 };
 
 DownloadView.onClickDownload = function(){
+    this.submitForm();
+}
+
+DownloadView.submitForm = function(){
     if (this.checkFormValidation()){
         this.emit('@auth', {threeWordsKey: this.getThreeWordsKey()});
     } else{
@@ -77,6 +81,13 @@ DownloadView.onFocusOut = function(e){
 };
 
 DownloadView.onKeyUP = function(e){
+    const enter = 13;
+    if (e.keyCode === enter && e.target.name === 'word3'){
+        this.submitForm();
+        
+        return;
+    }
+
     if (this.checkInputValidation(e.target)){
         this.markInputValid(e.target);
 
