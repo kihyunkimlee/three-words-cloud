@@ -35,6 +35,11 @@
 }
 
 .preview-name {
+    width: 150px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
     font-size: 1rem;
 }
 
@@ -55,4 +60,10 @@
     height: inherit;
     
     background-color: #2ac187;
+}
+
+@media only screen and (min-width: 768px) {
+    .preview-name {
+        width: 250px
+    }
 }
