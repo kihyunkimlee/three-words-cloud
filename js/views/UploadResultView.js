@@ -1,4 +1,5 @@
 import View from './View.js';
+import { date2Str } from '../utils';
 
 const tag = '[UploadResultView]';
 
@@ -31,8 +32,7 @@ UploadResultView.render = function(res){
     };
     this.keyContainerEl.innerHTML = this.getWordKeyHtml(words);
 
-    const d = new Date(res.expiredAt);
-    this.expiredDateEl.innerHTML = this.date2Str(d);
+    this.expiredDateEl.innerHTML = date2Str(new Date(res.expiredAt));
 };
 
 UploadResultView.getWordKeyHtml = function(words){
@@ -46,21 +46,6 @@ UploadResultView.getWordKeyHtml = function(words){
     }
 
     return html;
-};
-
-UploadResultView.date2Str = function(d){
-    const yyyy = d.getFullYear();
-    const MM = this.makeTwoDigitNum(d.getMonth() + 1);
-    const dd = this.makeTwoDigitNum(d.getDate());
-    const hh = this.makeTwoDigitNum(d.getHours());
-    const mm = this.makeTwoDigitNum(d.getMinutes());
-    const ss = this.makeTwoDigitNum(d.getSeconds());
-
-    return yyyy + '/' + MM + '/' + dd + ' ' + hh + ':' + mm + ':' + ss;
-};
-
-UploadResultView.makeTwoDigitNum = function(num){
-    return ('0' + num).slice(-2);
 };
 
 export default UploadResultView;
