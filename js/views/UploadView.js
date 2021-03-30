@@ -1,5 +1,6 @@
 import View from './View.js';
 import Dropzone from 'dropzone';
+import config from '../config';
 
 const tag = '[UploadView]';
 
@@ -26,7 +27,7 @@ UploadView.createDropzone = function(){
     Dropzone.autoDiscover = false;
     
     this.dropzone = new Dropzone(this.formEl, {
-        url: 'http://localhost:3000/file',
+        url: config.serverDomain + '/file',
         method: 'post',
         parallelUploads: 1,
         maxFilesize: this.maxFileSize,
