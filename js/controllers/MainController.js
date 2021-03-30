@@ -7,6 +7,8 @@ const tag = '[MainController]';
 
 export default {
     init(){
+        document.addEventListener('keyup', e => this.onKeyUp(e));
+
         TabView.setup(document.querySelector('#tabs'))
             .on('@change', e => this.onChangeTab(e.detail.tabName));
         
@@ -21,7 +23,7 @@ export default {
         console.log(tag, 'renderView()');
         TabView.setActiveTab(this.selectedTab);
 
-        if (this.selectedTab == 'UPLOAD'){
+        if (this.selectedTab === 'UPLOAD'){
             UploadController.show();
             DownloadController.hide();
         } else{
@@ -35,5 +37,13 @@ export default {
         
         this.selectedTab = tabName;
         this.renderView();
+    },
+
+    onKeyUp(e){
+        if (this.selectedTab === 'UPLOAD'){
+            UploadController.onKeyUp(e);
+        } else{
+            DownloadController.onKeyUp(e);
+        }
     },
 };

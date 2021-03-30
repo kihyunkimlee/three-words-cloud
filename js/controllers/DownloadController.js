@@ -69,4 +69,8 @@ export default {
     resetForm(){
         DownloadView.resetForm();
     },
+
+    onKeyUp(e){
+
+    },
 };

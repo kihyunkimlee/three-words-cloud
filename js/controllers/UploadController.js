@@ -7,8 +7,6 @@ const tag = '[UploadController]';
 
 export default {
     init(){
-        document.addEventListener('keyup', e => this.onKeyUp(e));
-
         UploadView.setup(document.querySelector('#uploadMain'))
             .on('@added', () => this.onAddedFile())
             .on('@uploaded', (e) => this.onUploadedFile(e.detail.res))
