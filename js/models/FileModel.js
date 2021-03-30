@@ -3,6 +3,6 @@ import config from '../config';
 
 export default {
     auth(threeWordsKey){
-        return axios.post(config.serverDomain + '/downloadToken', threeWordsKey);
+        return axios.post(config.serverDomain + '/downloadToken', threeWordsKey, { withCredentials: true });
     },
 };
