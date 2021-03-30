@@ -1,5 +1,4 @@
 import View from './View.js';
-import axios from 'axios';
 
 const tag = '[DownloadView]';
 
@@ -100,12 +99,12 @@ DownloadView.hideMessage = function(){
 }
 
 DownloadView.resetForm = function(){
-    Array.from(this.formEl.querySelector('input')).forEach(this.resetInput);
+    Array.from(this.formEl.querySelectorAll('input')).forEach(this.resetInput);
 };
 
 DownloadView.resetInput = function(input){
     input.value = '';
     input.className = '';
-}
+};
 
 export default DownloadView;
