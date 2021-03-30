@@ -6,3 +6,9 @@ node_modules/
 
 #webpack build file
 dist/
+
+#shell scripts
+*.sh
+
+#image files
+images/
