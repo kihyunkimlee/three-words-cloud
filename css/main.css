@@ -27,7 +27,7 @@ header {
 main {
     padding-top: 1.5rem;
 
-    height: calc(100% - 2rem);
+    height: calc(100% - 1rem);
 }
 
 #mainTitle {
@@ -105,7 +105,7 @@ main {
 
 footer {
     position: absolute;
-    bottom: -25px;
+    bottom: -35px;
 
     width: 100%;
 
