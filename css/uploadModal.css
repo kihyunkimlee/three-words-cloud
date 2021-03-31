@@ -26,24 +26,6 @@
     background-color: white;
 }
 
-@media only screen and (min-width: 768px) {
-    .modal-content {
-        top: 25%;
-        right: 15%;
-
-        width: 70%;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    .modal-content {
-        top: 25%;
-        right: 30%;
-
-        width: 40%;
-    }
-}
-
 .modal-title {
     margin: 0;
 
@@ -70,6 +52,29 @@
     background-color: #2ac187;
 }
 
+.input-field {
+    margin: 0.5rem 0rem;
+}
+
+.button {
+    display: block;
+
+    margin: 0rem auto;
+    padding: 0.5rem 1rem;
+    border: none;
+
+    font-size: 1rem;
+
+    color: white;
+    background-color: #2ac187;
+}
+
+.button:hover {
+    cursor: pointer;
+    
+    background-color: #24a473;
+}
+
 #ageSelect {
     display: block;
 
@@ -78,10 +83,24 @@
     width: 100%;
 }
 
-.input-field {
-    margin: 0.5rem 0rem;
-}
-
 #uploadButton {
     margin: 1.5rem 1rem 0rem auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .modal-content {
+        top: 25%;
+        right: 15%;
+
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .modal-content {
+        top: 25%;
+        right: 30%;
+
+        width: 40%;
+    }
 }

@@ -17,12 +17,6 @@
     font-weight: bold;
 }
 
-@media only screen and (min-width: 768px) {
-    #uploadResultTitle {
-        font-size: 1.4rem;
-    }
-}
-
 #uploadResultSubTitle {
     margin-top: 0rem;
     margin-left: 1rem;
@@ -37,12 +31,6 @@
     width: 100%;
 
     margin-top: 1.5rem;
-}
-
-@media only screen and (min-width: 768px) {
-    #uploadResultContent {
-        margin-top: 0.5rem;
-    }
 }
 
 #keyContainer {
@@ -73,10 +61,22 @@
 
 }
 
-@media only screen and (min-width: 768px) {
-    .key-value {
-        font-size: 1.75rem;
-    }
+.close-button {
+    position: absolute;
+
+    background-color: inherit;
+
+    width: 17px;
+    height: 17px;
+}
+
+.close-button:hover {
+    cursor: pointer;
+}
+
+.close-button img {
+    width: inherit;
+    height: inherit;
 }
 
 #uploadResultCloseButton {
@@ -90,15 +90,27 @@
     font-weight: normal;
 }
 
-@media only screen and (min-width: 768px) {
-    #uploadResultFooter {
-        font-size: 1.2rem;
-    }
-}
-
 #uploadResultExpiredDate
 
  {
     text-decoration: underline;
     font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+    #uploadResultTitle {
+        font-size: 1.4rem;
+    }
+
+    #uploadResultContent {
+        margin-top: 0.5rem;
+    }
+
+    .key-value {
+        font-size: 1.75rem;
+    }
+
+    #uploadResultFooter {
+        font-size: 1.2rem;
+    }
 }

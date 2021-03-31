@@ -8,6 +8,35 @@ html, body {
     min-width: 375px;
 
     margin: 0;
+
+    background: #fff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.flex-grow-0 {
+    flex-grow: 0;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
 }
 
 [class*="col-"] {
@@ -62,146 +91,4 @@ html, body {
     h4 {
         font-size: 0.6rem;
     }
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 100%;
-    height: 100%;
-}
-
-.row{
-    display: flex;
-    flex-direction: row;
-
-    width: 100%;
-}
-
-.justify-content-center {
-    justify-content: center;
-}
-
-.flex-grow-0 {
-    flex-grow: 0;
-}
-
-.flex-grow-1 {
-    flex-grow: 1;
-}
-
-#mainWrap {
-    background: whitesmoke;
-}
-
-#mainTitle {
-    margin-bottom: 1rem;
-}
-
-#mainSubTitle {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-#mainContentWrap {
-    display: flex;
-    justify-content: center;
-}
-
-#mainContent {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    
-    border:gray 1px solid;
-
-    width: 90%;
-    height: 300px;
-}
-
-.tabs {
-    flex-grow: 0;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
-    margin: 0;
-    padding: 0;
-}
-
-.tabs li {
-  display: inline-block;
-
-  border-bottom: 1px solid #ccc; 
-  padding: 7px;
-
-  box-sizing: border-box;
-  width: 50%;
-
-  text-align: center;
-  color: #999;
-
-  background-color: #eee;
-}
-
-.tabs li:hover {
-    cursor: pointer;
-}
-
-.tabs li.active {
-    cursor: default;
-
-    color: #fff;
-
-    background-color: #2ac187;
-}
-
-#subContent {
-    flex-grow: 1;
-
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-}
-
-.button {
-    display: block;
-
-    margin: 0rem auto;
-    padding: 0.5rem 1rem;
-    border: none;
-
-    font-size: 1rem;
-
-    color: white;
-    background-color: #2ac187;
-}
-
-.button:hover {
-    cursor: pointer;
-    
-    background-color: #24a473;
-}
-
-.close-button {
-    position: absolute;
-
-    background-color: inherit;
-
-    width: 17px;
-    height: 17px;
-}
-
-.close-button:hover {
-    cursor: pointer;
-}
-
-.close-button img {
-    width: inherit;
-    height: inherit;
 }
