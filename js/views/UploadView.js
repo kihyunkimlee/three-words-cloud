@@ -13,8 +13,6 @@ UploadView.setup = function(el){
     this.buttonEl = el.querySelector('form [type="button"]');
     this.previewEl = el.querySelector('form .preview');
 
-    this.maxFileSize = 3;
-
     this.createDropzone();
     this.addDropzoneEvents();
 
@@ -30,7 +28,7 @@ UploadView.createDropzone = function(){
         url: config.serverDomain + '/file',
         method: 'post',
         parallelUploads: 1,
-        maxFilesize: this.maxFileSize,
+        maxFilesize: config.maxFileSize,
         filesizeBase: 1000,
         paramName: 'file',
         createImageThumbnails: true,
