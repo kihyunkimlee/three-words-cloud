@@ -94,7 +94,7 @@ export default {
             errMessage = 'You must upload a file.';
         } else if (statusCode === 415){
             errMessage = 'This file format is forbidden!';
-        } else if (statusCode == 503){
+        } else if (statusCode === 503){
             errMessage = 'The server is temporarily unavailable.';
         } else{
             errMessage = 'An unexpected error has occurred!';

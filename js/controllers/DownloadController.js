@@ -45,13 +45,16 @@ export default {
     },
 
     handleAuthError(err){
-        if (err.response.status === 400){
-            DownloadView.renderMessage('Bad request!');
-        } else if (err.response.status === 404){
-            DownloadView.renderMessage('The keys are invalid');
-        } else if (err.response.status === 410){
-            DownloadView.renderMessage('The file has expired');
-        } else if (err.request){
+        console.dir(err);
+        if (err.response !== undefined){
+            if (err.response.status === 400){
+                DownloadView.renderMessage('Bad request!');
+            } else if (err.response.status === 404){
+                DownloadView.renderMessage('The keys are invalid');
+            } else if (err.response.status === 410){
+                DownloadView.renderMessage('The file has expired');
+            }
+        } else if (err.request !== undefined){
             DownloadView.renderMessage('The server is not responding');
         } else{
             DownloadView.renderMessage('An unexpected error has occurred!');
