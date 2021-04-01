@@ -35,7 +35,7 @@ DownloadResultView.render = function(res){
     this.fileSizeEl.innerHTML = num2FileUnits(parseInt(res.fileSize));
     this.fileUploadDateEl.innerHTML = date2Str(new Date(res.createdAt));
     this.fileExpireDateEl.innerHTML = date2Str(new Date(res.expiredAt));
-    this.downloadButtonEl.href = config.serverDomain + res.fileUploadedPath;
+    this.downloadButtonEl.href = config.serverDomain + '/' + res.fileUploadedPath;
 }
 
 DownloadResultView.getFileIconHtml = function(mimeType){
