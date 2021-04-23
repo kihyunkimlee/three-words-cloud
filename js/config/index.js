@@ -1,4 +1,4 @@
 export default {
-    serverDomain: 'http://localhost:3000',
-    maxFileSize: 3,
+    serverDomain: 'http://threewordscloud.com/api',
+    maxFileSize: 5,
 };
