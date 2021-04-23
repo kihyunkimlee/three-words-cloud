@@ -9,6 +9,3 @@ dist/
 
 #shell scripts
 *.sh
-
-#image files
-images/
