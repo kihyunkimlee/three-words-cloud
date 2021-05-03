@@ -30,12 +30,12 @@ DownloadResultView.onClickCloseBtn = function(){
 };
 
 DownloadResultView.render = function(res){
-    this.fileIconEl.innerHTML = this.getFileIconHtml(res.fileMimeType);
+    this.fileIconEl.innerHTML = this.getFileIconHtml(res.mimeType);
     this.fileNameEl.innerHTML = abbreviateStr(res.originalFileName.normalize(), 18);
-    this.fileSizeEl.innerHTML = num2FileUnits(parseInt(res.fileSize));
+    this.fileSizeEl.innerHTML = num2FileUnits(parseInt(res.size));
     this.fileUploadDateEl.innerHTML = date2Str(new Date(res.createdAt));
     this.fileExpireDateEl.innerHTML = date2Str(new Date(res.expiredAt));
-    this.downloadButtonEl.href = config.serverDomain + '/' + res.fileUploadedPath;
+    this.downloadButtonEl.href = config.serverDomain + '/file/' + res.key;
 }
 
 DownloadResultView.getFileIconHtml = function(mimeType){
