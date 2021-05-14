@@ -1,4 +1,5 @@
 const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'production',
@@ -11,6 +12,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
       {
         test: /\.js$/,
         include: [
@@ -31,4 +36,7 @@ module.exports = {
     overlay: true,
     stats: 'errors-only',
   },
+  plugins: [
+    new MiniCssExtractPlugin({ filename: 'style.css' }),
+  ],
 }

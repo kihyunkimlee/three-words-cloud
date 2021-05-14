@@ -18,7 +18,7 @@ COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=builder /usr/src/app/index.html /usr/share/nginx/html/index.html
 
-COPY --from=builder /usr/src/app/css /usr/share/nginx/html/css
+COPY --from=builder /usr/src/app/dist/style.css /usr/share/nginx/html/style.css
 
 COPY --from=builder /usr/src/app/images /usr/share/nginx/html/images
 
