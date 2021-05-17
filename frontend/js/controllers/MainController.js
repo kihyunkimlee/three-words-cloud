@@ -20,7 +20,6 @@ export default {
     },
 
     renderView(){
-        console.log(tag, 'renderView()');
         TabView.setActiveTab(this.selectedTab);
 
         if (this.selectedTab === 'UPLOAD'){

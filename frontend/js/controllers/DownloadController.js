@@ -45,7 +45,6 @@ export default {
     },
 
     handleAuthError(err){
-        console.dir(err);
         if (err.response !== undefined){
             if (err.response.status === 400){
                 DownloadView.renderMessage('Bad request!');
