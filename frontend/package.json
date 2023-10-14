@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/webpack"
+    "build": "./node_modules/.bin/webpack && cp index.html ./dist && cp -R images ./dist && cp -R favincon.ico ./dist/favincon"
   },
   "repository": {
     "type": "git",
